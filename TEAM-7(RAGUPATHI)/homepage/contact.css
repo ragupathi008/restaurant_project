@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('bg\ cont.jpg');
+    backdrop-filter: brightness(30%);
+    /* backdrop-filter: blur(22px); */
+    /* backdrop-filter: brightness(50%);  */
+    background-size: cover;
+    background-position:1px 5px;
+    background-repeat: no-repeat;  
+    /* height: 635px;    */
+    
+}
+
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+.contact .content p{
+
+    font-weight: bold;
+    color: #fff;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;    
+}
+
+.container .contactInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    /* justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px; */
+}
+.container .contactInfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.container .contactInfo .box .text{
+    display: flex;
+    margin-left:20px ;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+}
+.container .contactInfo .box .text h3{
+    font-weight: bold;
+    filter: drop-shadow(4px 2px 5px rgb(176, 239, 3));
+    color: rgb(0, 0, 0);
+}
+.contactForm{
+    width: 80%;
+    padding: 40px;
+    background: #fff;
+}
+.contactForm h2{
+    font-size: 30px;
+    color: #b91313;
+    font-weight: 500;
+}
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid rgb(63, 59, 59);
+    outline: none;
+    resize: none;
+}
+.contactForm .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #b91313;
+}
+.contactForm .inputBox  input:focus ~ span,
+.contactForm .inputBox  input:valid ~ span,
+.contactForm .inputBox  textarea:focus ~ span,
+.contactForm .inputBox  textarea:valid ~ span{
+    color: rgb(252, 118, 9);
+    font-size: 15px;
+    transform: translateY(-20px);
+    /* top: -20px;
+    transition: .1s; */
+}
+.contactForm .inputBox  input[type="submit"]
+{
+    width: 100%;
+    background: rgb(216, 206, 226);
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+}
+.contactForm .inputBox  input[type="submit"]:hover{
+    background: blue;
+    color: #fff;
+    border: none;
+}
+@media (max-width: 991px)
+{
+    .contact{
+        padding: 50px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* .box .box-mail{
+    margin-left: 35px;
+}
+.box .box-phn{
+    margin-left: -40px ;
+}
+.icon{
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.contactForm{
+    height: 400px;
+    min-width: 350px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center; 
+    margin-left: 40px;
+   padding-top: 20px;
+}
+.contactForm h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contactForm input{
+    height: 30px;
+    width: 240px;
+    padding-top: 40px;
+    font-size: 10px;
+}
+/* .feedback{
+    width: 100%;
+    height: 180px;
+} */
+/* .inputBox span{
+        position: absolute;
+        transform: translateY(50%);
+        transition: height .2s;
+} */
+/* .inputBox span:hover{
+    
+    transform: translateY(-50%);
+} */ */
+

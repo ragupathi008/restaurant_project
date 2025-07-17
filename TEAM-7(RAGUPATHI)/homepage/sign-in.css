@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100hv;
+    background: url('BOOK\ PLA.jpg');
+    backdrop-filter: brightness(30%);
+    width: 100%;
+    height: 835px;
+    /* background: linear-gradient(rgb(120, 35, 218,0.6),rgba(153, 226, 16, 0.6),rgb(120, 35, 218,0.6)); */
+    background-size:cover;   
+    background-position:1px 5px;
+    background-repeat: no-repeat;    
+}
+.content{
+    max-width: 400px;
+    text-align: center;
+}
+
+header{
+    position: fixed;
+    background: #ff0000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    user-select: none;
+    color: #8eb434;
+}
+.navigation a{
+      position: relative;
+      text-decoration: none;
+      margin-left: 30px;
+      color: #f3f3f3eb;
+      font-weight: bold;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: .5s;
+}
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+
+
+}
+.navigation .btnLogin-popup{
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border: 2px solid #f81111;
+    /* background: transparent; */
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #ed542a;
+    font-weight: bold;
+    margin-left: 30px;
+    transform-origin: right;
+    transition: .3s;
+}
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: black;
+}
+
+.wrapper{
+    position:absolute;
+    width: 400px;
+    height: 440px;
+    /* background: transparent; */
+    border:2px solid rgba(255,255,255,5);
+    /* backdrop-filter: blur(1.1em); */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgb(245, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+    background: whitesmoke;
+}
+.wrapper.active-popup{
+     transform: scale(1);
+}
+
+.wrapper.active{
+    height: 470px;
+}
+.center-box{
+    position: absolute;
+    top:0%;
+    left: 35%;
+    bottom: 55%;
+    transform: translate(-50%,50%);
+}
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #181616;
+    font-size: 1.5em;
+    color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+    transition: .4s;
+}
+.wrapper .icon-close:hover{
+    background: whitesmoke;
+    color: #181616;
+}
+.form-box h2{
+    font-size: 2.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(85, 0, 255);
+    text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(75, 69, 69);
+    margin: 30px 0;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: rgb(255, 132, 0);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .4s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: rgb(8, 3, 3);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    caret-color: rgb(140, 209, 28);
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: rgb(240, 83, 11);
+    line-height: 57px;
+}
+.remenber-forgot{
+    font-size: .9em;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remenber-forgot label input{
+    accent-color: rgb(68, 16, 16);
+    margin-right: 4px;
+}
+.remenber-forgot a{
+    color: rgba(45, 100, 184, 0.959);
+    text-decoration: none;
+}
+.remenber-forgot a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background: rgb(32, 7, 54);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ea850a;
+    font-weight: 500;
+
+}
+
+.popup{
+     width: 400px;
+     background: #ffffff;
+     border-radius: 6px;
+     position: absolute;
+     top: 0%;
+     left: 50%;
+     transform: translate(-50%,-50%) scale(0.1);
+     text-align: center;
+     padding: 0 30px 30px;
+     color: #333;
+     visibility: hidden;
+     transition: transform 0.4s top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    height: 80%;
+}
+.popup img{
+    width: 100px;
+    margin-top: -30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(245, 8, 8, 0);
+}
+.popup h2{
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #708514;
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(22, 6, 6, 0.5);
+}
+
+.login-register{
+    font-weight: 500;
+    font-size: .9em;
+    color: #f04419;
+    text-align: center;
+    margin: 20px;
+}
+.login-register p a{
+    color: #800af5;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+.input-box p{
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 15px;
+}

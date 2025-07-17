@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cart.css">
+    <script>
+        window.onload = function() {
+            const cartContainer = document.querySelector('.cart');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-card');
+                itemDiv.innerHTML = `
+                    <img src="${item.imgSrc}" alt="Product Image">
+                    <div class="title1">${item.title}</div>
+                    <div>Size: ${item.size}</div>
+                    <button class="delete-btn" onclick="removeFromCart(${index})">Delete</button>
+                `;
+                cartContainer.appendChild(itemDiv);
+            });
+        };
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+
+        function orderNow() {
+            alert('Order placed successfully!');
+            localStorage.removeItem('cart');
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <div class="cart"></div>
+    <button class="order-btn" onclick="orderNow()">Order Now</button>
+</body>
+</html>
